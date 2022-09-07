@@ -60,7 +60,7 @@ This repo was just reamped to suit an Anime-centric community. All original cred
 
 The Easiest Way to Deploy This Bot is Via Heroku. In Order To deploy, You Just Have Fill The Necessary Environment Variables and Done!
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FStrawHatNetwork%2FYorForgerBot&template=https%3A%2F%2Fgithub.com%2FStrawHatNetwork%2FYorForgerBot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FRachit-Pal%2FYorForger&template=https%3A%2F%2Fgithub.com%2FRachit-Pal%2FYorForger)
 
 
 <details>
@@ -73,7 +73,7 @@ The Easiest Way to Deploy This Bot is Via Heroku. In Order To deploy, You Just H
 </p>
 
 ```console
-    ~$ git clone https://github.com/StrawHatNetwork/YorForgerBot.git
+    ~$ git clone https://github.com/Rachit-Pal/YorForger.git
     ~$ cd YorForger
     ~$ cp sample_config.py config.py
 ```
