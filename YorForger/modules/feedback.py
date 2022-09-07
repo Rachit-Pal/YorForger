@@ -8,8 +8,6 @@ from YorForger import DEV_USERS as dev_user
 from YorForger import SUPPORT_CHAT
 from YorForger import pgram as bot
 
-# made by t.me/nandhaxd |- t.me/hodackaX
-
 yor_img = [
     "https://telegra.ph/file/f09abdbeba399891b45dc.jpg",
     "https://telegra.ph/file/acd729b9cd8ff513e568f.jpg",
@@ -29,10 +27,10 @@ async def feedback(_, m):
     text = m.text.split(None, 1)[1]
     feedback = "**#NewFeedBack** 📩\n"
     if m.chat:
-        feedback += f"**From chat:** `@{m.chat.username}`\n"
-    feedback += f"**user id**: `{USER.id}`\n"
-    feedback += f"**mention**: {USER.mention}\n"
-    feedback += f"**Feedback**: `{text}`"
+        feedback += f"**From chat :** `@{m.chat.username}`\n"
+    feedback += f"**User id :** `{USER.id}`\n"
+    feedback += f"**Mention :** {USER.mention}\n"
+    feedback += f"**Feedback :** `{text}`"
 
     msg = await bot.send_photo(
         f"@{SUPPORT_CHAT}",
@@ -55,9 +53,9 @@ async def feedback(_, m):
     )
 
     await m.reply_text(
-        "Your feedback Successfully Reported On SupportChat 📨",
+        "Your feedback Successfully Reported On SupportChat.",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton(" View Report", url=f"{msg.link}")]]
+            [[InlineKeyboardButton("📩 View Report", url=f"{msg.link}")]]
         ),
     )
 
