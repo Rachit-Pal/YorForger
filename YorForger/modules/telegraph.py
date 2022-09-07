@@ -9,9 +9,9 @@ from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 from telethon import Button
 
-emilia = "EMILIA"
+yor = "YOR"
 telegraph = Telegraph()
-r = telegraph.create_account(short_name=emilia)
+r = telegraph.create_account(short_name=yor)
 auth_url = r["auth_url"]
 
 
