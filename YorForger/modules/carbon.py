@@ -1,4 +1,4 @@
-from pyrogram import filters  # carbon by vegeta
+from pyrogram import filters
 
 from YorForger import pgram as pbot
 from YorForger.utils.errors import capture_err
