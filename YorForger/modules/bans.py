@@ -127,7 +127,7 @@ def ban(update: Update, context: CallbackContext) -> str:
         reply = (
             f"╔━「 <b>Ban Event</b> 」\n"
             f"❍ <b>Admin :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-            f"❍ <b>User :</b> {mention_html(member.user.id, html.escape(member.user.first_name))}\n"
+            f"❍ <b>User :</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
         )
         if reason:
             reply += f"\n❍ <b>Reason :</b> {html.escape(reason)}"
