@@ -42,7 +42,7 @@ The Support group can be reached out to at [StrawHat Support](https://t.me/Straw
 
 + [Rachit-Pal](https://github.com/Rachit-Pal) : OWNER | DEV
 + [Saitama](https://t.me/SAlTAM4) : SUDO
-+ [Saitama](https://github.com/StrawhatNetwork) : NETWORK
++ [Straw Hat](https://github.com/StrawhatNetwork) : NETWORK
 
 
 
