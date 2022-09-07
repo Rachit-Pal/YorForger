@@ -10,7 +10,7 @@ from YorForger import pgram as bot
 
 # made by t.me/nandhaxd |- t.me/hodackaX
 
-vegeta_img = [
+yor_img = [
     "https://telegra.ph/file/f09abdbeba399891b45dc.jpg",
     "https://telegra.ph/file/acd729b9cd8ff513e568f.jpg",
     "https://telegra.ph/file/7ecb7c8cf9d9072267415.jpg",
@@ -21,13 +21,13 @@ vegeta_img = [
 @bot.on_message(filters.command(["feedback", "bug"]))
 async def feedback(_, m):
     if m.chat.type == ChatType.PRIVATE:
-        return await m.reply_text("**plz give your feedback or bug report in groups")
+        return await m.reply_text("**Plz give your feedback or bug report in groups")
     USER = m.from_user
     if len(m.command) < 2:
-        await m.reply_text("**Gime a Feedback!**")
+        await m.reply_text("**Gimme a Feedback!**")
         return
     text = m.text.split(None, 1)[1]
-    feedback = "**#NewFeedBack**\n"
+    feedback = "**#NewFeedBack** 📩\n"
     if m.chat:
         feedback += f"**From chat:** `@{m.chat.username}`\n"
     feedback += f"**user id**: `{USER.id}`\n"
@@ -36,7 +36,7 @@ async def feedback(_, m):
 
     msg = await bot.send_photo(
         f"@{SUPPORT_CHAT}",
-        random.choice(vegeta_img),
+        random.choice(yor_img),
         caption=feedback,
         reply_markup=InlineKeyboardMarkup(
             [
@@ -55,9 +55,9 @@ async def feedback(_, m):
     )
 
     await m.reply_text(
-        "Your feedback Successfully Reported On SupportChat!",
+        "Your feedback Successfully Reported On SupportChat 📨",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("➡ View Report", url=f"{msg.link}")]]
+            [[InlineKeyboardButton(" View Report", url=f"{msg.link}")]]
         ),
     )
 
@@ -70,11 +70,11 @@ async def rejected(_, query: CallbackQuery):
     name = mm[3]
     if query.from_user.id in dev_user:
         await query.edit_message_caption(
-            f"**Feedback:** `{text}` **from** `{name}` | `{user_id}` **is Rejected by {query.from_user.mention} ❌**"
+            f"**Feedback :** {text} from {name} | {user_id} is Rejected by {query.from_user.mention} ✖️"
         )
         await bot.send_message(
             user_id,
-            f"**Your Feedback:** `{text}` **Has been Rejected by {query.from_user.mention} ❌**",
+            f"**Your Feedback :** {text} Has been Rejected by {query.from_user.mention} ✖️",
         )
     else:
         await query.answer("Only devs can Reject this feedback.", show_alert=True)
@@ -88,11 +88,11 @@ async def approved(_, query: CallbackQuery):
     name = mm[3]
     if query.from_user.id in dev_user:
         await query.edit_message_caption(
-            f"**Feedback:** `{text}` **from** `{name}` | `{user_id}` **is Approved by {query.from_user.mention} ✅**"
+            f"**Feedback :** {text} from {name} | {user_id} is Approved by {query.from_user.mention} ✅"
         )
         await bot.send_message(
             user_id,
-            f"**Your Feedback:** `{text}` **Has been Approved by {query.from_user.mention} ✅**",
+            f"**Your Feedback :** {text} Has been Approved by {query.from_user.mention} ✅",
         )
     else:
         await query.answer("Only devs can Approve this feedback.", show_alert=True)
