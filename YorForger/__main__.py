@@ -126,7 +126,7 @@ DONATE_STRING = """*don't need donate I'm free for everyone add your group's in 
 HELP_IMG = "https://telegra.ph/file/7ecb7c8cf9d9072267415.jpg"
 GROUPSTART_IMG = "https://telegra.ph/file/697f47b640bbc28201ed2.mp4"
 
-VEGETA_IMG = (
+YOR_IMG = (
     "https://telegra.ph/file/f09abdbeba399891b45dc.jpg",
     "https://telegra.ph/file/7ecb7c8cf9d9072267415.jpg",
 )
@@ -235,7 +235,7 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            image = random.choice(VEGETA_IMG)
+            image = random.choice(YOR_IMG)
             update.effective_message.reply_text(
                 PM_START_TEXT.format(image),
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -394,10 +394,10 @@ def help_button(update, context):
         pass
 
 
-def vegeta_about_callback(update, context):
+def yor_about_callback(update, context):
     query = update.callback_query
     if query.data == "vegeta_back":
-        vegeta_img = random.choice(VEGETA_IMG)
+        yor_img = random.choice(YOR_IMG)
         query.message.edit_text(
             PM_START_TEXT.format(vegeta_img),
             reply_markup=InlineKeyboardMarkup(buttons),
@@ -699,7 +699,7 @@ def main():
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
     about_callback_handler = CallbackQueryHandler(
-        vegeta_about_callback, pattern=r"vegeta_", run_async=True
+        yor_about_callback, pattern=r"yor_", run_async=True
     )
 
     donate_handler = CommandHandler("donate", donate)
