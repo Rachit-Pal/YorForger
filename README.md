@@ -88,4 +88,4 @@ Start with ```python3 -m YorForger```
 <br>
 
 <!--- Yor Forger Bot Stats --->   <!--- Get your own bot Stats from >> repobeats.axiom.co --->
-![Alt](https://repobeats.axiom.co/api/embed/f5c7bf66bba85bb6ade8b41c7fe31084d3bb7935.svg "Repobeats analytics image")
+![Alt](https://repobeats.axiom.co/api/embed/0d953e8759da8badaa6dbeea2d12c939309d84f8.svg "Repobeats analytics image")
