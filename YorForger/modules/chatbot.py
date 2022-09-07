@@ -129,7 +129,7 @@ def chatbot(update: Update, context: CallbackContext):
         Message = message.text
         bot.send_chat_action(chat_id, action="typing")
         kukiurl = requests.get(
-            f"http://Kukiapi.xyz/api/apikey={CHATBOT_KEY}/Vegeta/@NandhaxD/message="
+            f"http://Kukiapi.xyz/api/apikey={CHATBOT_KEY}/Yor/@Rachit-Pal/message="
             + Message
         )
         Kuki = json.loads(kukiurl.text)
@@ -140,7 +140,7 @@ def chatbot(update: Update, context: CallbackContext):
 
 def list_all_chats(update: Update, context: CallbackContext):
     chats = sql.get_all_kuki_chats()
-    text = "<b>Vegeta Enabled Chats</b>\n"
+    text = "<b>Yor Forger Enabled Chats</b>\n"
     for chat in chats:
         try:
             x = context.bot.get_chat(int(*chat))
@@ -157,7 +157,7 @@ __help__ = """
 *Admins only Commands*:
   ➢ `/Chatbot`*:* Shows chatbot control panel
   
-*Powered by ItelAi*
+*Powered by StrawHat Network*
 """
 
 __mod_name__ = "ChatBot"
