@@ -44,14 +44,14 @@ async def _(event):
             else:
                 end = datetime.now()
                 (end - start).seconds
-                vegeta = [
+                yor = [
                     [Button.url("T-GRAPH Link 📤", f"http://telegra.ph{media_urls[0]}")]
                 ]
                 os.remove(downloaded_file_name)
                 await h.edit(
                     "Perview[!](https://telegra.ph{})".format(media_urls[0]),
                     link_preview=True,
-                    buttons=vegeta,
+                    buttons=yor,
                 )
         elif input_str == "xt":
             user_object = await tbot.get_entity(r_message.sender_id)
