@@ -350,7 +350,7 @@ def help_button(update, context):
                                 text="🔙 Back", callback_data="help_back"
                             ),
                             InlineKeyboardButton(
-                                text="🔙 Home", callback_data="vegeta_back"
+                                text="🔙 Home", callback_data="yor_back"
                             ),
                         ]
                     ]
@@ -396,7 +396,7 @@ def help_button(update, context):
 
 def yor_about_callback(update, context):
     query = update.callback_query
-    if query.data == "vegeta_back":
+    if query.data == "yor_back":
         yor_img = random.choice(YOR_IMG)
         query.message.edit_text(
             PM_START_TEXT.format(yor_img),
