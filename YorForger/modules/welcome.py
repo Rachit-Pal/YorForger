@@ -1047,7 +1047,7 @@ def welcome_mute_help(update: Update, context: CallbackContext):
     )
 
 
-# TODO: get welcome data from group butler snap
+# TODO: Get welcome data from group Yor snap
 # def __import_data__(chat_id, data):
 #     welcome = data.get('info', {}).get('rules')
 #     welcome = welcome.replace('$username', '{username}')
