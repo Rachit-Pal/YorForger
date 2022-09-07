@@ -1,4 +1,4 @@
-import random  # vegeta
+import random
 import re
 from html import escape
 
