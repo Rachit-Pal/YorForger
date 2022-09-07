@@ -16,7 +16,7 @@ from YorForger.modules.disable import (
 )
 
 
-class VegetaTelegramHandler:
+class YorTelegramHandler:
     def __init__(self, d):
         self._dispatcher = d
 
@@ -175,7 +175,7 @@ class VegetaTelegramHandler:
         return _inlinequery
 
 
-vegetacmd = VegetaTelegramHandler(d).command
-vegetamsg = VegetaTelegramHandler(d).message
-vegetacallback = VegetaTelegramHandler(d).callbackquery
-vegetainline = VegetaTelegramHandler(d).inlinequery
+vegetacmd = YorTelegramHandler(d).command
+vegetamsg = YorTelegramHandler(d).message
+vegetacallback = YorTelegramHandler(d).callbackquery
+vegetainline = YorTelegramHandler(d).inlinequery
