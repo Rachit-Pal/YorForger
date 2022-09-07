@@ -130,7 +130,7 @@ def ban(update: Update, context: CallbackContext) -> str:
             f"❍ <b>User :</b> {mention_html(member.user.id, html.escape(member.user.first_name))}\n"
         )
         if reason:
-            reply += f"\n❍ <b>Reason :</b> \n{html.escape(reason)}"
+            reply += f"\n❍ <b>Reason :</b> {html.escape(reason)}"
 
         bot.send_animation(
             chat.id,
