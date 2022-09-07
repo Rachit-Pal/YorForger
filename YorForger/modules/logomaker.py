@@ -95,7 +95,7 @@ async def lego(event):
         )
         fname = "logo.png"
         img.save(fname, "png")
-        vegeta = [[Button.url("MADE BY YOR FORGER", "t.me/YorForgerRobot")]]
+        yor = [[Button.url("MADE BY YOR FORGER", "t.me/YorForgerRobot")]]
         await tbot.send_file(event.chat_id, file=fname, buttons=yor)
 
         await pesan.delete()
