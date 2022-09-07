@@ -188,7 +188,7 @@ from YorForger.config import ARQ_API_KEY, ARQ_API_URL
 aiohttpsession = ClientSession()
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient("Vegeta", API_ID, API_HASH)
+telethn = TelegramClient("YorForger", API_ID, API_HASH)
 pgram = Client("YorForger", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 
