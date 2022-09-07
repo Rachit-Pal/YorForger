@@ -87,23 +87,23 @@ def warn(
         if soft_warn:  # punch
             chat.unban_member(user.id)
             reply = (
-                f"<code>❕</code><b>Punch Event</b>\n"
-                f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
-                f"<code> </code><b>•  Count:</b> {limit}"
+                f"╔━「 <b>Punch Event</b> 」\n"
+                f"❍ <b>User :</b> {mention_html(user.id, user.first_name)}\n"
+                f"❍ <b>Count :</b> {limit}"
             )
 
         else:  # ban
             chat.kick_member(user.id)
             reply = (
-                f"<code>❕</code><b>Ban Event</b>\n"
-                f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
-                f"<code> </code><b>•  Count:</b> {limit}"
+                f"╔━「 <b>Ban Event</b> 」\n"
+                f"❍ <b>User :</b> {mention_html(user.id, user.first_name)}\n"
+                f"❍ <b>Count :</b> {limit}"
             )
 
         for warn_reason in reasons:
             reply += f"\n - {html.escape(warn_reason)}"
 
-        # message.bot.send_sticker(chat.id, BAN_STICKER)  # vegeta's sticker
+        # message.bot.send_sticker(chat.id, BAN_STICKER)
         keyboard = None
         log_reason = (
             f"<b>{html.escape(chat.title)}:</b>\n"
@@ -126,12 +126,13 @@ def warn(
         )
 
         reply = (
-            f"<code>❕</code><b>Warn Event</b>\n"
-            f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
-            f"<code> </code><b>•  Count:</b> {num_warns}/{limit}"
+            f"╔━「 <b>Warn Event</b> 」\n"
+            f"❍ <b>User :</b> {mention_html(user.id, user.first_name)}\n"
+            f"❍ <b>Admin :</b> {mention_html(user.id, user.first_name)}\n"
+            f"❍ <b>Count :</b> {num_warns}/{limit}"
         )
         if reason:
-            reply += f"\n<code> </code><b>•  Reason:</b> {html.escape(reason)}"
+            reply += f"\n❍ <b>Reason :</b> {html.escape(reason)}"
 
         log_reason = (
             f"<b>{html.escape(chat.title)}:</b>\n"
@@ -299,7 +300,7 @@ def warns(update: Update, context: CallbackContext):
                 f"This user has {num_warns}/{limit} warns, for the following reasons:"
             )
             for reason in reasons:
-                text += f"\n • {reason}"
+                text += f"\n ❍ {reason}"
 
             msgs = split_message(text)
             for msg in msgs:
