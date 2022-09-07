@@ -399,7 +399,7 @@ def yor_about_callback(update, context):
     if query.data == "vegeta_back":
         yor_img = random.choice(YOR_IMG)
         query.message.edit_text(
-            PM_START_TEXT.format(vegeta_img),
+            PM_START_TEXT.format(yor_img),
             reply_markup=InlineKeyboardMarkup(buttons),
             parse_mode=ParseMode.MARKDOWN,
             timeout=60,
