@@ -19,7 +19,7 @@ async def wish(_, m):
     text = m.text.split(None, 1)[1]
     wish_count = random.randint(1, 100)
     wish = f"✨ **Hey! {m.from_user.first_name}!** 🙋‍♀️\n"
-    wish += f"✨ **Your wish**: **{text}** 🧚🏻‍♀️"
+    wish += f"✨ **Your wish**: **{text}** 🧚🏻‍♀️\n"
     wish += f"✨ **Possible to: {wish_count}%**"
     await m.reply_animation(
         url,
