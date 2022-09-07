@@ -43,7 +43,7 @@ async def is_user_admin(user_id: int, chat_id):
     return status
 
 
-async def vegeta_is_admin(chat_id: int):
+async def yor_is_admin(chat_id: int):
     status = False
     vegeta = await telethn.get_me()
     async for user in telethn.iter_participants(
