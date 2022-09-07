@@ -47,7 +47,7 @@ from YorForger.modules.log_channel import loggable
 from YorForger.modules.sql.global_bans_sql import is_user_gbanned
 
 OWNER_IMG = "https://telegra.ph/file/e561a0dd4373db052ba90.jpg"
-VEGETA_ADD_IMG = "https://telegra.ph/file/c1bbda9417362bb142fae.jpg"
+YOR_ADD_IMG = "https://telegra.ph/file/c1bbda9417362bb142fae.jpg"
 
 VALID_WELCOME_FORMATTERS = [
     "first",
@@ -240,7 +240,7 @@ def new_member(update: Update, context: CallbackContext):
             if new_mem.id == bot.id:
                 first_name = update.effective_user.first_name
                 update.effective_message.reply_photo(
-                    VEGETA_ADD_IMG,
+                    YOR_ADD_IMG,
                     caption="Hello! *{}*\n *Thanks for adding me!*\n *Can You See...*\n *My Powers to Use /help.*".format(
                         first_name
                     ),
