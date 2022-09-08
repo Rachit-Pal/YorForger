@@ -70,16 +70,17 @@ def warn(user: User,
         if soft_warn:  # punch
             chat.unban_member(user.id)
             reply = (
-                f"<code>❕</code><b>Punch Event</b>\n"
-                f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
-                f"<code> </code><b>•  Count:</b> {limit}")
+                f"╔━「 <b>Punch Event</b> 」\n"
+                f"❍ <b>User :</b> {mention_html(user.id, user.first_name)}\n"
+                f"❍ <b>Count :</b> {limit}")
 
         else:  # ban
             chat.kick_member(user.id)
             reply = (
-                f"<code>❕</code><b>Ban Event</b>\n"
-                f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
-                f"<code> </code><b>•  Count:</b> {limit}")
+                f"╔━「 <b>Ban Event</b> 」\n"
+                f"❍ <b>User :</b> {mention_html(user.id, user.first_name)}\n"
+                f"❍ <b>Admin :</b> {warner_tag}\n"
+                f"❍ <b>Count :</b> {limit}")
 
         for warn_reason in reasons:
             reply += f"\n - {html.escape(warn_reason)}"
@@ -99,9 +100,10 @@ def warn(user: User,
                 "🔘 Remove warn", callback_data="rm_warn({})".format(user.id)) ]])
 
         reply = (
-            f"<code>❕</code><b>Warn Event</b>\n"
-            f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
-            f"<code> </code><b>•  Count:</b> {num_warns}/{limit}")
+            f"╔━「 <b>Warn Event</b> 」\n"
+            f"❍ <b>User :</b> {mention_html(user.id, user.first_name)}\n"
+            f"❍ <b>Admin :</b> {warner_tag}\n"
+            f"❍ <b>Count :</b> {num_warns}/{limit}")
         if reason:
             reply += f"\n<code> </code><b>•  Reason:</b> {html.escape(reason)}"
 
@@ -254,7 +256,7 @@ def warns(update: Update, context: CallbackContext):
         if reasons:
             text = f"This user has {num_warns}/{limit} warns, for the following reasons:"
             for reason in reasons:
-                text += f"\n • {reason}"
+                text += f"\n ❍ {reason}"
 
             msgs = split_message(text)
             for msg in msgs:
