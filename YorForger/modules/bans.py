@@ -125,19 +125,20 @@ def ban(update: Update, context: CallbackContext) -> str:
 
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         reply = (
-            f"<code>❕</code><b>Ban Event</b>\n"
-            f"<code> </code><b>•  User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
+            f"╔━「 <b>Ban Event</b> 」\n"
+            f"❍ <b>Admin :</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+            f"❍ <b>User :</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
         )
         if reason:
-            reply += f"\n<code> </code><b>• Reason:</b> \n{html.escape(reason)}"
+            reply += f"\n❍ <b>Reason :</b> {html.escape(reason)}"
 
         bot.send_animation(
             chat.id, BAN_IMG,caption=reply,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-       InlineKeyboardButton(text="❕Unban", callback_data=f"unbanb_unban={user_id}"),
-       InlineKeyboardButton(text="❌ Delete", callback_data="unbanb_del"),
+       InlineKeyboardButton(text="🔘 Unban", callback_data=f"unbanb_unban={user_id}"),
+       InlineKeyboardButton(text="✖️ Delete", callback_data="unbanb_del"),
                     ]
                 ]
             ),
@@ -228,13 +229,13 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
 
         reply_msg = (
-            f"<code>❕</code><b>Temp Banned</b>\n"
-            f"<code> </code><b>• User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}\n"
-            f"<code> </code><b>• Banned for: {time_val}</b>"
+            f"╔━「 <b>Temporary Ban</b> 」\n"
+            f"❍ <b>User :</b> {mention_html(member.user.id, html.escape(member.user.first_name))}\n"
+            f"❍ <b>Banned for : {time_val}</b>"
         )
 
         if reason:
-            reply_msg += f"\n<code> </code><b>• Reason:</b> {html.escape(reason)}"
+            reply_msg += f"\n❍ <b>Reason :</b> {html.escape(reason)}"
 
         bot.send_animation(
             chat.id,
@@ -243,9 +244,9 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
                 [
                     [
                         InlineKeyboardButton(
-                            text="❕Unban", callback_data=f"unbanb_unban={user_id}"
+                            text="🔘 Unban", callback_data=f"unbanb_unban={user_id}"
                         ),
-                        InlineKeyboardButton(text="❌ Delete", callback_data="unbanb_del"),
+                        InlineKeyboardButton(text="✖️ Delete", callback_data="unbanb_del"),
                     ]
                 ]
             ),
@@ -311,10 +312,10 @@ def unbanb_btn(update: Update, context: CallbackContext) -> str:
                 pass
             chat.unban_member(user_id)
             query.message.delete()
-            chat_name = "<b>• {}</b>".format(html.escape(chat.title))
+            chat_name = "<b>{}</b>".format(html.escape(chat.title))
             bot.send_animation(
-            chat.id, #this code made by @ctzfamily & @h0daka
-            UNBAN_IMG, caption= f" {chat_name}\n<b>👮Admin: </b>{mention_html(user.id, user.first_name)}\n<b>User: </b>{mention_html(member.user.id, member.user.first_name)}!",
+            chat.id,
+            UNBAN_IMG, caption= f"╔━「 <b>Unban Event</b> 」\n❍ <b>Group</b> : {chat_name}\n❍ <b>Admin</b> : {mention_html(user.id, user.first_name)}\n❍ <b>User</b> : {mention_html(member.user.id, member.user.first_name)}",
         	    parse_mode=ParseMode.HTML,
         	)
             bot.answer_callback_query(query.id, text="Unbanned!")
@@ -367,7 +368,7 @@ def punch(update: Update, context: CallbackContext) -> str:
         message.reply_text("I can't seem to find this user.")
         return log_message
     if user_id == bot.id:
-        message.reply_text("Yeahhh I'm not gonna do that.")
+        message.reply_text("Oye baka, go away! Shoo, shoo.")
         return log_message
 
     if is_user_ban_protected(chat, user_id):
@@ -376,7 +377,7 @@ def punch(update: Update, context: CallbackContext) -> str:
 
     res = chat.unban_member(user_id)  # unban on current user = kick
     if res:
-        # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
+        # bot.send_sticker(chat.id, BAN_STICKER)
         bot.send_animation(
             chat.id,
             KICK_IMG,caption=f"• <b>{html.escape(chat.title)}</b>\nRemoved! {mention_html(member.user.id, html.escape(member.user.first_name))}.",
@@ -405,12 +406,12 @@ def punch(update: Update, context: CallbackContext) -> str:
 def punchme(update: Update, context: CallbackContext):
     user_id = update.effective_message.from_user.id
     if is_user_admin(update.effective_chat, user_id):
-        update.effective_message.reply_text("I wish I could... but you're an admin.")
+        update.effective_message.reply_text("I wish I could...but you're an admin.")
         return
 
     res = update.effective_chat.unban_member(user_id)  # unban on current user = kick
     if res:
-        update.effective_message.reply_animation(SELF_KICK_IMG,caption="<b>❕Baka Noice Try!</b>",parse_mode=ParseMode.HTML,)
+        update.effective_message.reply_animation(SELF_KICK_IMG,caption="<b>❕ Baka, Noice Try!</b>",parse_mode=ParseMode.HTML,)
                                              
     else:
         update.effective_message.reply_text("Huh? I can't :/")
@@ -427,7 +428,7 @@ def unban(update: Update, context: CallbackContext) -> str:
     message = update.effective_message
     user = update.effective_user
     chat = update.effective_chat
-    chat_name = "<b>• {}</b>".format(html.escape(chat.title))
+    chat_name = "<b>{}</b>".format(html.escape(chat.title))
     log_message = ""
     bot, args = context.bot, context.args
     user_id, reason = extract_user_and_text(message, args)
