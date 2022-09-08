@@ -81,19 +81,19 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = """──────「 *Yor Forger* [🌺](https://telegra.ph/file/f09abdbeba399891b45dc.jpg) 」──────
+PM_START_TEXT = """──────「 *Makima* [🌺](https://telegra.ph/file/2ff02896b6e80f488d4d0.jpg) 」──────
 
-×× *Hey! It's Yor, truly Yours! I'm an anime themed group management bot with a lots of advance features!* ××
+×× *Hey, It's Makima! I'm an anime themed group management bot with a lots of advance features!* ××
 ➖➖➖➖➖➖➖➖➖➖
 ×× Try The Command Help Buttons Below To Know My Abilities ××
 
-──『*owened by @strawhatnetwork*』──
+──『*i'm test bot of @YorForgerRobot*』──
 """ 
 
 buttons = [
     [
         InlineKeyboardButton(
-                            text="➕ Add Yor To Group ➕",
+                            text="➕ Add Makima To Group ➕",
                             url=f"t.me/{BOT_USERNAME}?startgroup=true"),
                     ],
                      [
@@ -125,11 +125,10 @@ And the following:
 HELP_MSG = "Click the button below to get help manu in your pm."
 DONATE_STRING = """*No need to donate, I'm free for everyone. Just add @YorForgerRobot in your group, that's enough for me.*"""
 HELP_IMG= ""
-GROUPSTART_IMG= "https://telegra.ph/file/697f47b640bbc28201ed2.mp4"
+GROUPSTART_IMG= "https://telegra.ph/file/804eebf08565dadf40a68.jpg"
 
-VEGETA_IMG = ( "https://telegra.ph/file/f09abdbeba399891b45dc.jpg",
-               "https://telegra.ph/file/02721e56b138bad4a6695.jpg",
-               "https://telegra.ph/file/acd729b9cd8ff513e568f.jpg",)       
+VEGETA_IMG = ( "https://telegra.ph/file/2ff02896b6e80f488d4d0.jpg",
+               "https://telegra.ph/file/804eebf08565dadf40a68.jpg",)       
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -239,7 +238,7 @@ def start(update: Update, context: CallbackContext):
     else:
         first_name = update.effective_user.first_name
         update.effective_message.reply_animation(
-            GROUPSTART_IMG, caption= "*hello!\n ┗► {} ◄┛,*\n*Super Saiyan here*\n*Power lavel time* : {} ".format(
+            GROUPSTART_IMG, caption= "*hello {},*\n*I'm awaken since* : {} ".format(
              first_name,uptime
             ),
             parse_mode=ParseMode.MARKDOWN,
@@ -617,7 +616,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1610284626 and DONATION_LINK:
+        if OWNER_ID != 931530251 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
@@ -667,10 +666,10 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","[YOUR YOR IS BACK BABY](https://telegra.ph/file/7ecb7c8cf9d9072267415.jpg)", parse_mode=ParseMode.MARKDOWN) 
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}","[YOUR MAKIMA IS BACK BABE](https://telegra.ph/file/2ff02896b6e80f488d4d0.jpg)", parse_mode=ParseMode.MARKDOWN) 
         except Unauthorized:
             LOGGER.warning(
-                "Bot isnt able to send message to support_chat, go and check!",
+                "Bot isn't able to send message to support_chat, go and check!",
             )
         except BadRequest as e:
             LOGGER.warning(e.message)
